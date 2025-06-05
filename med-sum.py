@@ -5,9 +5,9 @@ import json
 import os
 
 # Set your OpenRouter API key here
-load_dotenv()  # loads variables from .env into environment
-API_KEY = os.getenv("API_KEY")
-
+# load_dotenv()  # loads variables from .env into environment
+# api = os.getenv("API_KEY")
+API_KEY = st.secrets["openrouter"]["api_key"]
 st.set_page_config(page_title="Medical Assistant", page_icon="🩺", layout="centered")
 
 st.title("🩺 Medical Diagnosis & Prescription Explainer")
