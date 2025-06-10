@@ -1,4 +1,3 @@
-```markdown
 # Medical Diagnosis & Prescription Explainer
 
 ![](screenshot.png)
