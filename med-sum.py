@@ -73,7 +73,6 @@ if submitted:
         - Key precautions or warnings.
         3. Do NOT make up symptoms, effects, or drug names.
         4. Keep it friendly and encouraging.
-        5. Add a short, light-hearted joke at the end to make the patient smile.
 
         Examples:
 
@@ -85,7 +84,6 @@ if submitted:
         Amlodipine is a medicine that helps relax your blood vessels, making it easier for blood to flow and lowering your blood pressure. 
         Its active ingredient is amlodipine besylate. 
         Precautions: Take it at the same time each day, avoid grapefruit juice, and don’t skip doses. 
-        Joke: "Think of your blood pressure like a balloon — we just don’t want it to float away!"
 
         Example 2:
         Diagnosis: Type 2 Diabetes
@@ -95,7 +93,6 @@ if submitted:
         Metformin helps lower blood sugar by reducing sugar production in the liver and improving insulin sensitivity. 
         Its active ingredient is metformin hydrochloride. 
         Precautions: Take it with food to avoid stomach upset, and keep monitoring your blood sugar. 
-        Joke: "We just want your sugar levels sweet, but not dessert-sweet!"
 
         Now, explain the following for the patient:
 
