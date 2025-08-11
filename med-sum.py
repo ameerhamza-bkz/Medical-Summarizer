@@ -50,14 +50,60 @@ if submitted:
     if not diagnosis or not medicines:
         st.warning("Please fill in both fields.")
     else:
-        # --- Prepare the prompt for the LLM API ---
-        prompt = (
-            f"Diagnosis: {diagnosis}\n"
-            f"Medicines: {medicines}\n"
-            "Explain the diagnosis, medicine uses, composition, and precautions in an easy to understand manner "
-            "to help the patient understand the diagnosis and prescribed medicines easily. "
-            "add a little joke at end to cheer patient"
-        )
+        # # --- Prepare the prompt for the LLM API ---
+        # prompt = (
+        #     f"Diagnosis: {diagnosis}\n"
+        #     f"Medicines: {medicines}\n"
+        #     "Explain the diagnosis, medicine uses, composition, and precautions in an easy to understand manner "
+        #     "to help the patient understand the diagnosis and prescribed medicines easily. "
+        #     "add a little joke at end to cheer patient"
+        # )
+        prompt = f"""
+        You are a highly accurate medical explanation assistant.
+        Your job is to explain a diagnosis and the prescribed medicines clearly for a patient,
+        using only information you are certain about. If any detail is unknown or not provided,
+        state "Not enough information provided" instead of guessing.
+
+        Guidelines:
+        1. Use plain, non-technical language a non-medical person can understand.
+        2. Explain:
+        - What the diagnosis means.
+        - What each medicine does.
+        - The medicine's main ingredients or composition (if known).
+        - Key precautions or warnings.
+        3. Do NOT make up symptoms, effects, or drug names.
+        4. Keep it friendly and encouraging.
+        5. Add a short, light-hearted joke at the end to make the patient smile.
+
+        Examples:
+
+        Example 1:
+        Diagnosis: Hypertension
+        Medicines: Amlodipine
+        Explanation:
+        Hypertension means your blood pressure is higher than normal, which can put extra strain on your heart and blood vessels. 
+        Amlodipine is a medicine that helps relax your blood vessels, making it easier for blood to flow and lowering your blood pressure. 
+        Its active ingredient is amlodipine besylate. 
+        Precautions: Take it at the same time each day, avoid grapefruit juice, and don’t skip doses. 
+        Joke: "Think of your blood pressure like a balloon — we just don’t want it to float away!"
+
+        Example 2:
+        Diagnosis: Type 2 Diabetes
+        Medicines: Metformin
+        Explanation:
+        Type 2 diabetes means your body has trouble using insulin properly, which makes it harder to control your blood sugar. 
+        Metformin helps lower blood sugar by reducing sugar production in the liver and improving insulin sensitivity. 
+        Its active ingredient is metformin hydrochloride. 
+        Precautions: Take it with food to avoid stomach upset, and keep monitoring your blood sugar. 
+        Joke: "We just want your sugar levels sweet, but not dessert-sweet!"
+
+        Now, explain the following for the patient:
+
+        Diagnosis: {diagnosis}
+        Medicines: {medicines}
+        Explanation:
+        """
+
 
         # --- API Endpoint and Headers ---
         url = "https://openrouter.ai/api/v1/chat/completions"
